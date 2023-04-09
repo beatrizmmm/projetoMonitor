@@ -1,11 +1,10 @@
+import { RouterModule } from '@angular/router';
 import { GestaoRequeimaProcessoDtoComponent } from './components/gestao-requeima/gestao-requeima-processo/components/gestao-requeima-processo-dto/gestao-requeima-processo-dto.component';
-import { GestaoRequeimaProcessoCabineComponent } from './components/gestao-requeima/gestao-requeima-processo/components/gestao-requeima-processo-cabine/gestao-requeima-processo-cabine.component';
+
 import { GestaoRequeimaProcessoComponent } from './components/gestao-requeima/gestao-requeima-processo/gestao-requeima-processo.component';
 import { GestaoRequeimaPessoasComponent } from './components/gestao-requeima/gestao-requeima-pessoas/gestao-requeima-pessoas.component';
 import { GestaoRequeimaComponent } from './components/gestao-requeima/gestao-requeima.component';
-import { GestaoFornoProcessoCabineComponent } from './components/gestao-forno/gestao-forno-processo/components/gestao-forno-processo-cabine/gestao-forno-processo-cabine.component';
-import { GestaoFornoProcessoComponent } from './components/gestao-forno/gestao-forno-processo/gestao-forno-processo.component';
-import { GestaoFornoPessoasComponent } from './components/gestao-forno/gestao-forno-pessoas/gestao-forno-pessoas.component';
+
 import { GestaoFornoInventarioComponent } from './components/gestao-forno/gestao-forno-inventario/gestao-forno-inventario.component';
 import { GestaoFornoComponent } from './components/gestao-forno/gestao-forno.component';
 import { GestaoEsmaltacaoProcessoInspecaoComponent } from './components/gestao-esmaltacao/gestao-esmaltacao-processo-inspecao/gestao-esmaltacao-processo-inspecao.component';
@@ -20,7 +19,7 @@ import { GestaoInventarioComponent } from './components/gestao/gestao-inventario
 import { GestaoComponent } from './components/gestao/gestao.component';
 import { AreasComponent } from './components/areas/areas.component';
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+
 
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { PalestrantesComponent } from './components/palestrantes/palestrantes.component';
@@ -44,6 +43,10 @@ import { GestaoEsmaltacaoProcessoInspecaoDtoComponent } from './components/gesta
 import { GestaoEsmaltacaoProdutosComponent } from './components/gestao-esmaltacao/gestao-esmaltacao-produtos/gestao-esmaltacao-produtos.component';
 import { GestaoFornoProcessoDtoComponent } from './components/gestao-forno/gestao-forno-processo/components/gestao-forno-processo-dto/gestao-forno-processo-dto.component';
 import { GestaoRequeimaInventarioComponent } from './components/gestao-requeima/gestao-requeima-inventario/gestao-requeima-inventario.component';
+import { GestaoFornoPessoasComponent } from './components/gestao-forno/gestao-forno-pessoas/gestao-forno-pessoas.component';
+import { GestaoFornoProcessoCabineComponent } from './components/gestao-forno/gestao-forno-processo/components/gestao-forno-processo-cabine/gestao-forno-processo-cabine.component';
+import { GestaoFornoProcessoComponent } from './components/gestao-forno/gestao-forno-processo/gestao-forno-processo.component';
+import { GestaoRequeimaProcessoCabineComponent } from './components/gestao-requeima/gestao-requeima-processo/components/gestao-requeima-processo-cabine/gestao-requeima-processo-cabine.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },

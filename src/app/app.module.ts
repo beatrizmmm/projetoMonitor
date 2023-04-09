@@ -1,25 +1,15 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { NgModule } from '@angular/core';
-import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-
-import { CollapseModule } from 'ngx-bootstrap/collapse';
-import { TooltipModule } from 'ngx-bootstrap/tooltip';
-import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
-import { ModalModule } from 'ngx-bootstrap/modal';
-import { PaginationModule } from 'ngx-bootstrap/pagination';
 import { TabsModule } from 'ngx-bootstrap/tabs';
-
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
+import { PaginationModule } from 'ngx-bootstrap/pagination';
+import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
+import { TooltipModule } from 'ngx-bootstrap/tooltip';
+import { CollapseModule } from 'ngx-bootstrap/collapse';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NgModule } from '@angular/core';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { defineLocale } from 'ngx-bootstrap/chronos';
 import { ptBrLocale } from 'ngx-bootstrap/locale';
-import { NgxCurrencyModule } from 'ngx-currency';
-
 import { ToastrModule } from 'ngx-toastr';
-import { NgxSpinnerModule } from 'ngx-spinner';
-
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ContatosComponent } from './components/contatos/contatos.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
@@ -31,13 +21,10 @@ import { PerfilComponent } from './components/user/perfil/perfil.component';
 import { PerfilDetalheComponent } from './components/user/perfil/perfil-detalhe/perfil-detalhe.component';
 import { NavComponent } from './shared/nav/nav.component';
 import { TituloComponent } from './shared/titulo/titulo.component';
-
 import { EventoService } from './services/evento.service';
 import { LoteService } from './services/lote.service';
 import { AccountService } from './services/account.service';
-
 import { JwtInterceptor } from './interceptors/jwt.interceptor';
-
 import { DateTimeFormatPipe } from './helpers/DateTimeFormat.pipe';
 import { EventoDetalheComponent } from './components/eventos/evento-detalhe/evento-detalhe.component';
 import { EventoListaComponent } from './components/eventos/evento-lista/evento-lista.component';
@@ -45,7 +32,6 @@ import { UserComponent } from './components/user/user.component';
 import { LoginComponent } from './components/user/login/login.component';
 import { RegistrationComponent } from './components/user/registration/registration.component';
 import { HomeComponent } from './components/home/home.component';
-import { RedesSociaisComponent } from './components/redesSociais/redesSociais.component';
 import { AreasComponent } from './components/areas/areas.component';
 import { GestaoComponent } from './components/gestao/gestao.component';
 import { GestaoInventarioComponent } from './components/gestao/gestao-inventario/gestao-inventario.component';
@@ -63,50 +49,97 @@ import { GestaoEsmaltacaoProcessoInspecaoDtoComponent } from './components/gesta
 import { GestaoEsmaltacaoProdutosComponent } from './components/gestao-esmaltacao/gestao-esmaltacao-produtos/gestao-esmaltacao-produtos.component';
 import { GestaoFornoComponent } from './components/gestao-forno/gestao-forno.component';
 import { GestaoFornoInventarioComponent } from './components/gestao-forno/gestao-forno-inventario/gestao-forno-inventario.component';
-import { GestaoFornoPessoasComponent } from './components/gestao-forno/gestao-forno-pessoas/gestao-forno-pessoas.component';
-import { GestaoFornoProcessoComponent } from './components/gestao-forno/gestao-forno-processo/gestao-forno-processo.component';
-import { GestaoFornoProcessoCabineComponent } from './components/gestao-forno/gestao-forno-processo/components/gestao-forno-processo-cabine/gestao-forno-processo-cabine.component';
 import { GestaoFornoProcessoDtoComponent } from './components/gestao-forno/gestao-forno-processo/components/gestao-forno-processo-dto/gestao-forno-processo-dto.component';
 import { GestaoRequeimaComponent } from './components/gestao-requeima/gestao-requeima.component';
 import { GestaoRequeimaInventarioComponent } from './components/gestao-requeima/gestao-requeima-inventario/gestao-requeima-inventario.component';
 import { GestaoRequeimaPessoasComponent } from './components/gestao-requeima/gestao-requeima-pessoas/gestao-requeima-pessoas.component';
 import { GestaoRequeimaProcessoComponent } from './components/gestao-requeima/gestao-requeima-processo/gestao-requeima-processo.component';
-import { GestaoRequeimaProcessoCabineComponent } from './components/gestao-requeima/gestao-requeima-processo/components/gestao-requeima-processo-cabine/gestao-requeima-processo-cabine.component';
 import { GestaoRequeimaProcessoDtoComponent } from './components/gestao-requeima/gestao-requeima-processo/components/gestao-requeima-processo-dto/gestao-requeima-processo-dto.component';
+import { RedesSociaisComponent } from './components/redes-sociais/redes-sociais.component';
+import { GestaoFornoPessoasComponent } from './components/gestao-forno/gestao-forno-pessoas/gestao-forno-pessoas.component';
+import { GestaoFornoProcessoCabineComponent } from './components/gestao-forno/gestao-forno-processo/components/gestao-forno-processo-cabine/gestao-forno-processo-cabine.component';
+import { GestaoFornoProcessoComponent } from './components/gestao-forno/gestao-forno-processo/gestao-forno-processo.component';
+import { GestaoRequeimaProcessoCabineComponent } from './components/gestao-requeima/gestao-requeima-processo/components/gestao-requeima-processo-cabine/gestao-requeima-processo-cabine.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { BrowserModule } from '@angular/platform-browser';
+import { ModalModule } from 'ngx-bootstrap/modal';
+import { NgxCurrencyModule } from 'ngx-currency';
+import { NgxSpinnerModule } from 'ngx-spinner';
+import { AppRoutingModule } from './app-routing.module';
 
 defineLocale('pt-br', ptBrLocale);
 
 @NgModule({
   declarations: [
     AppComponent,
-    AreasComponent,
+    EventosComponent,
+    PalestrantesComponent,
+    PalestranteListaComponent,
+    PalestranteDetalheComponent,
     ContatosComponent,
     DashboardComponent,
-    EventosComponent,
-    EventoDetalheComponent,
-    EventoListaComponent,
-    GestaoComponent,
-    HomeComponent,
-    PalestrantesComponent,
-    PalestranteDetalheComponent,
-    PalestranteListaComponent,
-    RedesSociaisComponent,
-    UserComponent,
-    LoginComponent,
     PerfilComponent,
     PerfilDetalheComponent,
-    RegistrationComponent,
+    RedesSociaisComponent,
     NavComponent,
-    TituloComponent
+    TituloComponent,
+    DateTimeFormatPipe,
+    EventoDetalheComponent,
+    EventoListaComponent,
+    HomeComponent,
+    UserComponent,
+    LoginComponent,
+    RegistrationComponent,
+    AreasComponent,
+    GestaoComponent,
+    GestaoInventarioComponent,
+    GestaoPessoasComponent,
+    GestaoProcessoInspecaoComponent,
+    GestaoProcessoInspecaoCabineComponent,
+    GestaoProcessoInspecaoDtoComponent,
+    GestaoProdutosComponent,
+    GestaoEsmaltacaoComponent,
+    GestaoEsmaltacaoInventarioComponent,
+    GestaoEsmaltacaoPessoasComponent,
+    GestaoEsmaltacaoProcessoInspecaoComponent,
+    GestaoEsmaltacaoProcessoInspecaoCabineComponent,
+    GestaoEsmaltacaoProcessoInspecaoDtoComponent,
+    GestaoEsmaltacaoProdutosComponent,
+    GestaoFornoComponent,
+    GestaoFornoInventarioComponent,
+    GestaoFornoPessoasComponent,
+    GestaoFornoProcessoComponent,
+    GestaoFornoProcessoCabineComponent,
+    GestaoFornoProcessoDtoComponent,
+    GestaoRequeimaComponent,
+    GestaoRequeimaInventarioComponent,
+    GestaoRequeimaPessoasComponent,
+    GestaoRequeimaProcessoComponent,
+    GestaoRequeimaProcessoCabineComponent,
+    GestaoRequeimaProcessoDtoComponent
   ],
   imports: [
-
+    BrowserModule,
+    FormsModule,
+    ReactiveFormsModule,
+    AppRoutingModule,
+    HttpClientModule,
+    BrowserAnimationsModule,
+    CollapseModule.forRoot(),
+    TooltipModule.forRoot(),
+    BsDropdownModule.forRoot(),
+    BsDatepickerModule.forRoot(),
+    PaginationModule.forRoot(),
+    TabsModule.forRoot(),
+    ModalModule.forRoot(),
     ToastrModule.forRoot({
       timeOut: 4000,
       positionClass: 'toast-bottom-right',
       preventDuplicates: true,
       progressBar: true,
     }),
+    NgxSpinnerModule,
+    NgxCurrencyModule,
   ],
   providers: [
     AccountService,
