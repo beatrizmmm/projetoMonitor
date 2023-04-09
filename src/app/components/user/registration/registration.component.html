@@ -1,0 +1,90 @@
+<div class="row mt-4">
+  <div class="container">
+    <div class="col-12 d-flex">
+      <div class="col-md-6 d-none d-md-block" style="height: 450px;">
+        <div class="text-center col-md-12 my-auto side-heder">
+          <h1>Cadastro de Usuário</h1>
+          <img src="../../../../assets/cultura.jpg" class="my-4 image">
+        </div>
+      </div>
+
+      <div class="col-md-6 cadastro">
+
+        <form [formGroup]="form" class="p-1" (ngSubmit)="register()">
+          <div class="pb-2 d-block d-md-none">
+            <h3 class="border-bottom">Cadastro de Usuário</h3>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-sm-6">
+              <label>Primeiro Nome</label>
+              <input type="text" class="form-control" formControlName="primeiroNome"
+                [ngClass]="{'is-invalid': f.primeiroNome.errors && f.primeiroNome.touched}" placeholder="Insira o Primeiro nome" />
+              <div class="invalid-feedback">
+                Primeiro Nome é obrigatório.
+              </div>
+            </div>
+            <div class="form-group col-sm-6">
+              <label>Último nome</label>
+              <input type="text" class="form-control" formControlName="ultimoNome"
+                [ngClass]="{'is-invalid': f.ultimoNome.errors && f.ultimoNome.touched}" placeholder="Insira o Último nome" />
+              <div class="invalid-feedback">
+                Último Nome é obrigatório.
+              </div>
+            </div>
+          </div>
+          <div class="form-group matricula">
+            <label for="">Matricula:</label>
+            <input class="form-control" type="number" formControlName="matricula"
+              [ngClass]="{'is-invalid': f.matricula.errors && f.matricula.touched}" placeholder="Insira a matrícula" />
+            <div class="invalid-feedback">
+              Matrícula é obrigatório.
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-sm-6">
+              <label for="">Senha:</label>
+              <input class="form-control" type="password" formControlName="password"
+                [ngClass]="{'is-invalid': f.password.errors && f.password.touched}" placeholder="Digite uma Senha" />
+              <div *ngIf="f.password.errors?.required && f.password.touched"
+              class="invalid-feedback">
+                Senha é obrigatório.
+              </div>
+              <div *ngIf="f.password.errors?.minlength && f.password.touched"
+              class="invalid-feedback">
+                Deve conter no mínimo 6 caracteres.
+              </div>
+            </div>
+            <div class="form-group col-sm-6">
+              <label for="">Confirmar Senha:</label>
+              <input class="form-control" type="password" formControlName="confirmePassword"
+                [ngClass]="{'is-invalid': f.confirmePassword.errors && f.confirmePassword.touched}" placeholder="Confirme a Senha" />
+              <div *ngIf="f.confirmePassword.errors?.required"
+                class="invalid-feedback">
+                Confirmar Senha é obrigatório.
+              </div>
+              <div *ngIf="f.confirmePassword.errors?.mustMatch"
+                class="invalid-feedback">
+                Repedir a senha é obrigatório.
+              </div>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-12">
+              <button [disabled]="!form.valid" class="btn btn-lg btn-success btn-block px-5" type="submit">
+                Registar
+              </button>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-12">
+              <a class="btn btn-link btn-block" routerLink="/user/login">
+                Já sou Cadastrado
+              </a>
+            </div>
+          </div>
+        </form>
+
+      </div>
+    </div>
+  </div>
+  </div>

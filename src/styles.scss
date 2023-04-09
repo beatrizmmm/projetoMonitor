@@ -1,1 +1,54 @@
 /* You can add global styles to this file, and also import other style files */
+@import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+@import '../node_modules/ngx-bootstrap/datepicker/bs-datepicker.css';
+@import '../node_modules/@fortawesome/fontawesome-free/css/all.min.css';
+@import '../node_modules/bootswatch/dist/cosmo/bootstrap.min.css';
+
+
+
+.form-group {
+  &.upper-label {
+    position: relative;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+    padding-top: 4px;
+    padding-right: 0;
+    background: #ffff;
+    label {
+      position: absolute;
+      top: -12px;
+      left: 35px;
+      transform: translate(-58%);
+      color: #454545;
+      background: linear-gradient(
+        0deg,
+        rgba(255,255,255,1) 0%,
+        rgba(255,255,255,1) 47%,
+        rgba(255,255,255,0) 47%,
+        rgba(255,255,255,0) 100%
+      );
+      padding: 0 4px;
+      font-size: 0.88rem;
+      letter-spacing: 0.2px;
+    }
+    input {
+      font-size: 0.8rem;
+    }
+    input[type="text"] {
+      height: calc(2.4em + 1rem + 3px);
+      padding-left: 17px;
+      letter-spacing: 0.6px;
+    }&.error {
+      border-color: #f34646;
+    }
+  }
+}
+
+.no-border {
+  border: 0;
+  box-shadow: none;
+  &:focus {
+    border: 0;
+    box-shadow: none;
+  }
+}
