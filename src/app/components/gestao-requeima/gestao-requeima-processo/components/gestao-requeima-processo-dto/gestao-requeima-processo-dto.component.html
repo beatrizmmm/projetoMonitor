@@ -1,0 +1,70 @@
+<div class="container py-3 display">
+  <div class="col-12">
+    <h4>DTO</h4>
+  </div>
+  <form action="#" autocomplete="off" [formGroup]="dtoForm">
+    <div class="col-12 label-cabine mt-5 mb-4">
+      <div class="form-group mt-3">
+        <label for="form-cabine">Matrícula</label>
+        <select formControlName="cabine" class="custom-select custom-select-lg no-border" id="form-cabine">
+          <option value="" selected disabled>Selecione</option>
+          <option *ngFor="let cabine of selectCabine" [value]="cabine">{{cabine}}</option>
+        </select>
+      </div>
+    </div>
+    <div class="col-12">
+      <div class="col-12">
+        <h5>1) Iniciou o processo retirando a peça de cima para baixo?</h5>
+      </div>
+      <div class="col-12 d-flex">
+        <div class="col-2">
+          <input formControlName="processoRetirada" type="radio" [value]="1" id="material-processoRetirada1" name="processoRetirada" class="mr-2">
+          <label for="material-processoRetirada1">Sim</label>
+        </div>
+        <div class="col-2">
+          <input formControlName="processoRetirada" type="radio" [value]="0" id="material-processoRetirada0" name="processoRetirada" class="mr-2">
+          <label for="material-processoRetirada0">Não</label>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 mt-4">
+      <div class="col-12">
+        <h5>2) Colocou a peça em cima do suporte e fez a inspeção visual para identificar possíveis defeitos?</h5>
+      </div>
+      <div class="col-12 d-flex">
+        <div class="col-2">
+          <input formControlName="peca" type="radio" [value]="1" id="material-peca1" name="peca" class="mr-2">
+          <label for="material-peca1">Sim</label>
+        </div>
+        <div class="col-2">
+          <input formControlName="peca" type="radio" [value]="0" id="material-peca0" name="peca" class="mr-2">
+          <label for="material-peca0">Não</label>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 mt-4">
+      <div class="col-12">
+        <h5>3) Carimbou todas as peças?</h5>
+      </div>
+      <div class="col-12 d-flex">
+        <div class="col-2">
+          <input formControlName="carimbo" type="radio" [value]="1" id="material-carimbo1" name="carimbo" class="mr-2">
+          <label for="material-carimbo1">Sim</label>
+        </div>
+        <div class="col-2">
+          <input formControlName="carimbo" type="radio" [value]="0" id="material-carimbo0" name="carimbo" class="mr-2">
+          <label for="material-carimbo0">Não</label>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 mt-4">
+      <div class="col-12">
+        <h5>Observações</h5>
+        <input formControlName="observacao" type="text" class="form-control">
+      </div>
+    </div>
+    <div class="col-12 mt-4 d-flex justify-content-center">
+      <button type="button" class="btn btn-primary">Enviar</button>
+    </div>
+  </form>
+</div>

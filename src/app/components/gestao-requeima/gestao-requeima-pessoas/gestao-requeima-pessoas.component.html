@@ -1,0 +1,31 @@
+<div class="container py-3 display">
+  <div class="col-12 table-striped">
+    <h4>Gestão de Pessoas</h4>
+  </div>
+  <table class="table table-striped">
+    <thead>
+    <tr class="t-haed">
+      <th scope="col-6">NOME</th>
+      <th scope="col-6">STATUS</th>
+    </tr>
+    </thead>
+    <div>&nbsp;</div>
+    <tbody>
+    <tr *ngFor="let pessoa of pessoa">
+      <th scope="row" class="form-control">{{ pessoa.nome }}</th>
+      <td class="p-0">
+        <div class="btn-group btn-group-toggle" >
+        <label ngbButtonLabel class=" mr-4">
+           <input ngbButton type="radio" [value]="1"> Presente
+        </label>
+        <label ngbButtonLabel class=" ">
+           <input ngbButton type="radio" [value]="2"> Falta
+        </label>
+     </div></td>
+    </tr>
+    </tbody>
+  </table>
+  <div class="col-12 mt-4 d-flex justify-content-center">
+    <button type="button" class="btn btn-primary">Enviar</button>
+  </div>
+</div>

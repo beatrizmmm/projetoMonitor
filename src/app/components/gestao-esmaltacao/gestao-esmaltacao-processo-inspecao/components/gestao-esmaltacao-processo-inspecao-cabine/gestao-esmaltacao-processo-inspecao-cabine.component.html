@@ -1,0 +1,112 @@
+<div class="container py-3 display">
+  <div class="col-12">
+    <h4>Auditoria de cabine</h4>
+  </div>
+  <form action="#" autocomplete="off" [formGroup]="cabineForm">
+    <div class="col-12 label-cabine mt-5 mb-4">
+      <div class="form-group mt-3">
+        <label for="form-cabine">Cabine</label>
+        <select formControlName="cabine" class="custom-select custom-select-lg no-border" id="form-cabine">
+          <option value="" selected disabled>Selecione</option>
+          <option *ngFor="let cabine of selectCabine" [value]="cabine">{{cabine}}</option>
+        </select>
+      </div>
+    </div>
+    <div class="col-12">
+      <div class="col-12">
+        <h5>1) Todos os materiais estão dispostos na cabine e em bom estado de uso?</h5>
+      </div>
+      <div class="col-12 d-flex">
+        <div class="col-2">
+          <p>bucha</p>
+        </div>
+        <div class="col-2">
+          <input formControlName="bucha" type="radio" [value]="1" id="material-bucha1" name="bucha" class="mr-2">
+          <label for="material-bucha1">Sim</label>
+        </div>
+        <div class="col-2">
+          <input formControlName="bucha" type="radio" [value]="0" id="material-bucha0" name="bucha" class="mr-2">
+          <label for="material-bucha0">Não</label>
+        </div>
+      </div>
+      <div class="col-12 d-flex">
+        <div class="col-2">
+          <p>bigBoss</p>
+        </div>
+        <div class="col-2">
+          <input formControlName="bigBoss" type="radio" [value]="1" id="material-bigBoss1" name="bigBoss" class="mr-2">
+          <label for="material-bigBoss1">Sim</label>
+        </div>
+        <div class="col-2">
+          <input formControlName="bigBoss" type="radio" [value]="0" id="material-bigBoss0" name="bigBoss" class="mr-2">
+          <label for="material-bigBoss0">Não</label>
+        </div>
+      </div>
+      <div class="col-12 d-flex">
+        <div class="col-2">
+          <p>lapis</p>
+        </div>
+        <div class="col-2">
+          <input formControlName="lapis" type="radio" [value]="1" id="material-lapis1" name="lapis" class="mr-2">
+          <label for="material-lapis1">Sim</label>
+        </div>
+        <div class="col-2">
+          <input formControlName="lapis" type="radio" [value]="0" id="material-lapis0" name="lapis" class="mr-2">
+          <label for="material-lapis0">Não</label>
+        </div>
+      </div>
+      <div class="col-12 d-flex">
+        <div class="col-2">
+          <p>pirulito</p>
+        </div>
+        <div class="col-2">
+          <input formControlName="pirulito" type="radio" [value]="1" id="material-pirulito1" name="pirulito" class="mr-2">
+          <label for="material-pirulito1">Sim</label>
+        </div>
+        <div class="col-2">
+          <input formControlName="pirulito" type="radio" [value]="0" id="material-pirulito0" name="pirulito" class="mr-2">
+          <label for="material-pirulito0">Não</label>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 mt-4">
+      <div class="col-12">
+        <h5>2) O torno está em bom estado de uso e sem avarias?</h5>
+      </div>
+      <div class="col-12 d-flex">
+        <div class="col-2">
+          <input formControlName="torno" type="radio" [value]="1" id="material-torno1" name="torno" class="mr-2">
+          <label for="material-torno1">Sim</label>
+        </div>
+        <div class="col-2">
+          <input formControlName="torno" type="radio" [value]="0" id="material-torno0" name="torno" class="mr-2">
+          <label for="material-torno0">Não</label>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 mt-4">
+      <div class="col-12">
+        <h5>3) As lampadas e proteções da cabine estão funcionando e sem avarias?</h5>
+      </div>
+      <div class="col-12 d-flex">
+        <div class="col-2">
+          <input formControlName="lampadas" type="radio" [value]="1" id="material-lampadas1" name="lampadas" class="mr-2">
+          <label for="material-lampadas1">Sim</label>
+        </div>
+        <div class="col-2">
+          <input formControlName="lampadas" type="radio" [value]="0" id="material-lampadas0" name="lampadas" class="mr-2">
+          <label for="material-lampadas0">Não</label>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 mt-4">
+      <div class="col-12">
+        <h5>Observações</h5>
+        <input formControlName="observacao" type="text" class="form-control">
+      </div>
+    </div>
+    <div class="col-12 mt-4 d-flex justify-content-center">
+      <button type="button" class="btn btn-primary">Enviar</button>
+    </div>
+  </form>
+</div>
