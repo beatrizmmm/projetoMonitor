@@ -8,6 +8,7 @@ import { Evento } from 'src/app/models/Evento';
 import { PaginatedResult, Pagination } from 'src/app/models/Pagination';
 import { EventoService } from 'src/app/services/evento.service';
 import { environment } from 'src/environments/environment';
+import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 
 @Component({
   selector: 'app-evento-lista',
